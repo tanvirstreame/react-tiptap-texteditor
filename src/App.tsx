@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import './App.scss'
+
+import {
+  BubbleMenu,
+  EditorContent,
+  useEditor,
+} from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import React from "react";
+import { Toolbar } from "./Toolbar";
+import { Comment } from './extensions/Comment';
+import "./App.scss"
+
+export default () => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+    ],
+    content: `
+      <p>
+        Try to select <em>this text</em> to see what we call the bubble menu.
+      </p>
+      <p>
+        Neat, isn’t it? Add an empty paragraph to see the floating menu.
+      </p>
+    `,
+     onSelectionUpdate({ editor }) {
+      const { from, to } = editor.state.selection
+      const text = editor.state.doc.textBetween(from, to, ' ')
+      console.log(text,'asdsada')
+    },
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {editor && <BubbleMenu className="bubble-menu" tippyOptions={{ duration: 100 }} editor={editor}>
+         <Toolbar editor={editor} />
+        </BubbleMenu>
+      }
+      <EditorContent editor={editor} />
+    </>
+  )
 }
-
-export default App;
