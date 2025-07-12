@@ -1,6 +1,7 @@
 {
   "name": "tiptap-app",
   "version": "0.1.0",
+  "homepage": "https://tanvirstreame.github.io/react-tiptap-texteditor",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
