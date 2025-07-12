@@ -1,6 +1,6 @@
-
-
-import './App.scss'
+import Mention from "@tiptap/extension-mention";
+import "./App.scss";
+import suggestion from "./suggestion";
 
 import {
   BubbleMenu,
@@ -10,13 +10,18 @@ import {
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 import { Toolbar } from "./Toolbar";
-import { Comment } from './extensions/Comment';
 import "./App.scss"
 
 export default () => {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Mention.configure({
+        HTMLAttributes: {
+          class: 'mention',
+        },
+        suggestion,
+      }),
     ],
     content: `
       <p>
@@ -26,12 +31,12 @@ export default () => {
         Neat, isn’t it? Add an empty paragraph to see the floating menu.
       </p>
     `,
-     onSelectionUpdate({ editor }) {
-      const { from, to } = editor.state.selection
-      const text = editor.state.doc.textBetween(from, to, ' ')
-      console.log(text,'asdsada')
+    onSelectionUpdate({ editor }) {
+      const { from, to } = editor.state.selection;
+      const text = editor.state.doc.textBetween(from, to, " ");
+      console.log(text, "asdsada");
     },
-  })
+  });
 
   return (
     <>
@@ -41,5 +46,5 @@ export default () => {
       }
       <EditorContent editor={editor} />
     </>
-  )
-}
+  );
+};

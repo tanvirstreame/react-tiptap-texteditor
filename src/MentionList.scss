@@ -1,0 +1,42 @@
+:root {
+  --gray-1: #d3d3d3;
+  --gray-2: rgba(61, 37, 20, .05);
+  --gray-3: rgba(61, 37, 20, .12);
+  --purple: #6A00F5;
+  --white: #FFFFFF;
+  --purple-contrast: #ffffff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.dropdown-menu {
+  background: var(--white);
+  border: 1px solid var(--gray-1);
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  overflow: auto;
+  padding: 0.4rem;
+  position: relative;
+
+  button {
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    gap: 0.25rem;
+    text-align: left;
+    width: 100%;
+
+    &:hover,
+    &:hover.is-selected {
+      background-color: var(--gray-3);
+    }
+
+    &.is-selected {
+      background-color: var(--gray-2);
+    }
+  }
+}
