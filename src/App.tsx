@@ -17,6 +17,7 @@ import Text from "@tiptap/extension-text";
 import TextStyle from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
 import Dropcursor from "@tiptap/extension-dropcursor";
+import Image from "@tiptap/extension-image";
 
 export default () => {
   const editor = useEditor({
@@ -49,6 +50,7 @@ export default () => {
         ],
       }),
       Dropcursor,
+      Image,
     ],
     content: `
       <p>
