@@ -238,3 +238,40 @@
     }
   }
 }
+
+.comment {
+  background-color: rgba(255, 255, 0, 0.4);
+  border-bottom: 1px dashed orange;
+  position: relative;
+  cursor: help;
+}
+
+.comment::after {
+  content: attr(data-comment);
+  position: absolute;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+  z-index: 10;
+  display: none;
+}
+
+.comment:hover::after {
+  display: block;
+}
+
+.commented-text {
+  background-color: rgba(255, 255, 0, 0.3);
+}
+
+.inline-comment {
+  font-size: 0.75em;
+  color: #999;
+  margin-left: 4px;
+  font-style: italic;
+}

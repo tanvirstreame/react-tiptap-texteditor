@@ -21,7 +21,11 @@ export const Toolbar = ({ editor }: ToolbarProps) => {
     const content = prompt("Enter your comment");
     if (!content) return;
 
-    editor.chain().focus().setMark("comment", { content }).run();
+    editor
+      .chain()
+      .focus()
+      .setMark("comment", { content })
+      .run();
   };
 
   return (

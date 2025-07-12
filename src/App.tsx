@@ -11,6 +11,7 @@ import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 import { Toolbar } from "./Toolbar";
 import "./App.scss"
+import { Comment } from './extensions/Comment';
 
 export default () => {
   const editor = useEditor({
@@ -22,6 +23,7 @@ export default () => {
         },
         suggestion,
       }),
+      Comment
     ],
     content: `
       <p>
