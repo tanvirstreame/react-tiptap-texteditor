@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-tiptap-texteditor/static/css/main.c1edce66.css",
-    "main.js": "/react-tiptap-texteditor/static/js/main.87c2f600.js",
-    "static/js/453.75b728d2.chunk.js": "/react-tiptap-texteditor/static/js/453.75b728d2.chunk.js",
+    "main.css": "/react-tiptap-texteditor/static/css/main.33c5acc6.css",
+    "main.js": "/react-tiptap-texteditor/static/js/main.217a9554.js",
+    "static/js/453.af91038f.chunk.js": "/react-tiptap-texteditor/static/js/453.af91038f.chunk.js",
     "index.html": "/react-tiptap-texteditor/index.html",
-    "main.c1edce66.css.map": "/react-tiptap-texteditor/static/css/main.c1edce66.css.map",
-    "main.87c2f600.js.map": "/react-tiptap-texteditor/static/js/main.87c2f600.js.map",
-    "453.75b728d2.chunk.js.map": "/react-tiptap-texteditor/static/js/453.75b728d2.chunk.js.map"
+    "main.33c5acc6.css.map": "/react-tiptap-texteditor/static/css/main.33c5acc6.css.map",
+    "main.217a9554.js.map": "/react-tiptap-texteditor/static/js/main.217a9554.js.map",
+    "453.af91038f.chunk.js.map": "/react-tiptap-texteditor/static/js/453.af91038f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1edce66.css",
-    "static/js/main.87c2f600.js"
+    "static/css/main.33c5acc6.css",
+    "static/js/main.217a9554.js"
   ]
 }
