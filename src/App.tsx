@@ -16,6 +16,7 @@ import Color from "@tiptap/extension-color";
 import Text from "@tiptap/extension-text";
 import TextStyle from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
+import Dropcursor from "@tiptap/extension-dropcursor";
 
 export default () => {
   const editor = useEditor({
@@ -47,6 +48,7 @@ export default () => {
           },
         ],
       }),
+      Dropcursor,
     ],
     content: `
       <p>
