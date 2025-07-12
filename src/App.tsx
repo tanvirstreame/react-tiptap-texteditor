@@ -12,6 +12,10 @@ import React from "react";
 import { Toolbar } from "./Toolbar";
 import "./App.scss"
 import { Comment } from './extensions/Comment';
+import Table from '@tiptap/extension-table'
+import TableCell from '@tiptap/extension-table-cell'
+import TableHeader from '@tiptap/extension-table-header'
+import TableRow from '@tiptap/extension-table-row'
 
 export default () => {
   const editor = useEditor({
@@ -23,7 +27,13 @@ export default () => {
         },
         suggestion,
       }),
-      Comment
+      Comment,
+      Table.configure({
+        resizable: true,
+      }),
+      TableRow,
+      TableHeader,
+      TableCell,
     ],
     content: `
       <p>
