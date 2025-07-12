@@ -19,6 +19,7 @@ import Link from "@tiptap/extension-link";
 import Dropcursor from "@tiptap/extension-dropcursor";
 import Image from "@tiptap/extension-image";
 import FileHandler from "@tiptap/extension-file-handler";
+import { VideoEmbed } from "./extensions/VideoEmbed";
 
 export default () => {
   const editor = useEditor({
@@ -105,6 +106,7 @@ export default () => {
           });
         },
       }),
+      VideoEmbed,
     ],
     content: `
       <p>

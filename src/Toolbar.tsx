@@ -1,6 +1,6 @@
 import type { Editor } from "@tiptap/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBold, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faBold, faComment, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faItalic } from '@fortawesome/free-solid-svg-icons'
 import { faStrikethrough } from '@fortawesome/free-solid-svg-icons'
 import "./App.scss";
@@ -28,6 +28,13 @@ export const Toolbar = ({ editor }: ToolbarProps) => {
       .run();
   };
 
+  const addVideo = () => {
+    const url = prompt('Paste a video URL')
+    if (!url || !editor) return
+
+    editor.chain().focus().setVideoEmbed(url).run()
+}
+
   return (
     <div className="toolbar">
       <FontAwesomeIcon
@@ -49,6 +56,11 @@ export const Toolbar = ({ editor }: ToolbarProps) => {
         onClick={addComment}
         className={`toolbar-button`}
         icon={faComment}
+      />
+       <FontAwesomeIcon
+        onClick={addVideo}
+        className={`toolbar-button`}
+        icon={faVideo}
       />
     </div>
   );
