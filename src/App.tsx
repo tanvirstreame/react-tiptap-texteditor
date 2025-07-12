@@ -15,6 +15,7 @@ import TableRow from "@tiptap/extension-table-row";
 import Color from "@tiptap/extension-color";
 import Text from "@tiptap/extension-text";
 import TextStyle from "@tiptap/extension-text-style";
+import Link from "@tiptap/extension-link";
 
 export default () => {
   const editor = useEditor({
@@ -37,6 +38,14 @@ export default () => {
       TextStyle,
       Color.configure({
         types: ["textStyle"],
+      }),
+      Link.configure({
+        protocols: [
+          {
+            scheme: "tel",
+            optionalSlashes: true,
+          },
+        ],
       }),
     ],
     content: `
