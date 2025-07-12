@@ -2,20 +2,19 @@ import Mention from "@tiptap/extension-mention";
 import "./App.scss";
 import suggestion from "./suggestion";
 
-import {
-  BubbleMenu,
-  EditorContent,
-  useEditor,
-} from "@tiptap/react";
+import { BubbleMenu, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 import { Toolbar } from "./Toolbar";
-import "./App.scss"
-import { Comment } from './extensions/Comment';
-import Table from '@tiptap/extension-table'
-import TableCell from '@tiptap/extension-table-cell'
-import TableHeader from '@tiptap/extension-table-header'
-import TableRow from '@tiptap/extension-table-row'
+import "./App.scss";
+import { Comment } from "./extensions/Comment";
+import Table from "@tiptap/extension-table";
+import TableCell from "@tiptap/extension-table-cell";
+import TableHeader from "@tiptap/extension-table-header";
+import TableRow from "@tiptap/extension-table-row";
+import Color from "@tiptap/extension-color";
+import Text from "@tiptap/extension-text";
+import TextStyle from "@tiptap/extension-text-style";
 
 export default () => {
   const editor = useEditor({
@@ -23,7 +22,7 @@ export default () => {
       StarterKit,
       Mention.configure({
         HTMLAttributes: {
-          class: 'mention',
+          class: "mention",
         },
         suggestion,
       }),
@@ -34,6 +33,11 @@ export default () => {
       TableRow,
       TableHeader,
       TableCell,
+      Text,
+      TextStyle,
+      Color.configure({
+        types: ["textStyle"],
+      }),
     ],
     content: `
       <p>
@@ -52,10 +56,15 @@ export default () => {
 
   return (
     <>
-      {editor && <BubbleMenu className="bubble-menu" tippyOptions={{ duration: 100 }} editor={editor}>
-         <Toolbar editor={editor} />
+      {editor && (
+        <BubbleMenu
+          className="bubble-menu"
+          tippyOptions={{ duration: 100 }}
+          editor={editor}
+        >
+          <Toolbar editor={editor} />
         </BubbleMenu>
-      }
+      )}
       <EditorContent editor={editor} />
     </>
   );
