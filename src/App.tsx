@@ -8,6 +8,7 @@ import React from "react";
 import { Toolbar } from "./Toolbar";
 import "./App.scss";
 import { Comment } from "./extensions/Comment";
+import ReactComponentExtension from "./extensions/ReactComponentExtension";
 import Table from "@tiptap/extension-table";
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
@@ -32,6 +33,7 @@ export default () => {
         suggestion,
       }),
       Comment,
+      ReactComponentExtension,
       Table.configure({
         resizable: true,
       }),
@@ -115,6 +117,7 @@ export default () => {
       <p>
         Neat, isn’t it? Add an empty paragraph to see the floating menu.
       </p>
+      <react-component count="0"></react-component>
     `,
     onSelectionUpdate({ editor }) {
       const { from, to } = editor.state.selection;
